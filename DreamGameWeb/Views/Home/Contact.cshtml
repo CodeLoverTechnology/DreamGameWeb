@@ -1,17 +1,106 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+
+
+
+
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        <fieldset>
+
+
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">E-Mail</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Contact No.</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                        <input name="contact_no" placeholder="(+91)" class="form-control" type="number" required>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Username</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input name="user_name" placeholder="Username" class="form-control" type="text" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Password</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input name="user_password" placeholder="Password" class="form-control" type="password" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Confirm Password</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input name="confirm_password" placeholder="Confirm Password" class="form-control" type="password" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Date of Birth</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input name="date" placeholder="date of birth" class="form-control" type="date" required>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <!-- Select Basic -->
+            <!-- Success message -->
+            <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4">
+                    <br>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+</div>
+    </div><!-- /.container -->
