@@ -154,13 +154,16 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\%2819%29 Part - 27 - Multiple Layouts in MVC - mvc tutorial for beginners in .net c# - YouTube.MP4" />
     <Content Include="Content\images\1.jpg" />
     <Content Include="Content\images\12.jpg" />
     <Content Include="Content\images\2.jpg" />
     <Content Include="Content\images\3.jpg" />
     <Content Include="Content\images\4cr.png" />
     <Content Include="Content\images\calender_grey.png" />
+    <Content Include="Content\images\indiateam.jpg" />
     <Content Include="Content\images\multi_sport_grey.png" />
+    <Content Include="Content\images\yv.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -235,9 +238,11 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Shared\_Layout_afterlogin.cshtml" />
     <Content Include="Views\User\UserDishbord.cshtml" />
+    <Content Include="Views\User\verification.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Verification\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

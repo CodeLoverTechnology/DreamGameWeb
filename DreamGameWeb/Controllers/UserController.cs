@@ -18,5 +18,11 @@ namespace DreamGameWeb.Controllers
         {
             return View();
         }
+        public ActionResult verification()
+        {
+            return View();
+        }
+       
+      
     }
 }

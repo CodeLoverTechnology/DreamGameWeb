@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "verification";
+    Layout = "~/Views/Shared/_Layout_afterlogin.cshtml";
+}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Mobile Number</label>
+                    <input type="tel" class="form-control" id="exampleInputPassword1" pattern="^\d{10}$" placeholder="Mobile Number" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary d-inline">Submit</button>
+            </form>
+        </div>
+        <div class="col-lg-6">
+            <form>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                    
+                </div>
+
+                <button type="submit" class="btn btn-primary  btn-group-lg">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

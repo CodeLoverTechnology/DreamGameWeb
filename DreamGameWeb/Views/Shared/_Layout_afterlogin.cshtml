@@ -15,7 +15,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav mr-auto alert-link">
                 <li class="nav-item active">
                     <a class="nav-link" href="../Home/Index">Home <span class="sr-only">(current)</span></a>
                 </li>
@@ -29,27 +29,30 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">HowToPlay</a>
                 </li>
-                
+
+
             </ul>
-            
-            
-            <ul class="navbar-nav mr-md-3">
-                <li class="nav-item dropdown float-sm-left">
-                    <button class="nav-link dropdown-toggle mx-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        
-                    </button>
-                    <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-                        
-                        <a class="dropdown-item" href="#">My Contests</a>
-                        <a class="dropdown-item" href="#">My Account</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Verification</a>
-                        <a class="dropdown-item" href="#">Change Password</a>
+
+
+            <ul class="navbar-nav  float-right bg-dark">
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="~/Content/images/3.jpg" width="95" height="50">
+                    </a>
+                    <div class="dropdown-menu bg-transparent border-danger" aria-labelledby="navbarDropdown">
+
+                        <a class="dropdown-item text-dark " href="#">My Contests</a>
+                        <a class="dropdown-item text-dark " href="#">My Account</a>
+                        <div class="dropdown-divider text-dark"></div>
+                        <a class="dropdown-item text-dark" href="../Home/Verification">Verification</a>
+                        <a class="dropdown-item text-dark" href="#">Change Password</a>
+                        <a class="dropdown-item text-dark" href="#">LogOut</a>
                     </div>
                 </li>
             </ul>
         </div>
     </nav>
+    
     @*<div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -76,8 +79,8 @@
         <footer class="fixed-bottom bg-dark">
             <p class="float-left text-white ">
                 Copy Right 2018 All reserved
-                    Dream 11
-                
+                Dream 11
+
             </p>
             <p class="m-0 float-right text-white">Presented By :<a href="http://codelovertechnology.com/" target="_blank"> CodeLover Technology</a></p>
         </footer>
