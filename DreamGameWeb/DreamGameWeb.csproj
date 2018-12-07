@@ -160,8 +160,13 @@
     <Content Include="Content\images\3.jpg" />
     <Content Include="Content\images\4cr.png" />
     <Content Include="Content\images\calender_grey.png" />
+    <Content Include="Content\images\desktop_app2 %281%29.png" />
     <Content Include="Content\images\indiateam.jpg" />
     <Content Include="Content\images\live.png" />
+    <Content Include="Content\images\man 1.PNG" />
+    <Content Include="Content\images\man2.jpg" />
+    <Content Include="Content\images\man3.jpg" />
+    <Content Include="Content\images\men.png" />
     <Content Include="Content\images\multi_sport_grey.png" />
     <Content Include="Content\images\pyramid-2.jpg" />
     <Content Include="Content\images\yv.jpg" />
