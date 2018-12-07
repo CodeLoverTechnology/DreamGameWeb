@@ -22,7 +22,27 @@ namespace DreamGameWeb.Controllers
         {
             return View();
         }
-       
-      
+        public ActionResult ForgetPassword()
+        {
+            return View();
+        }
+        public ActionResult PrivacyandPolicy()
+        {
+            return View();
+        }
+        public ActionResult HowToPlay()
+        {
+            return View();
+        }
+        public ActionResult MyContest()
+        {
+            return View();
+        }
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
+
+
     }
 }

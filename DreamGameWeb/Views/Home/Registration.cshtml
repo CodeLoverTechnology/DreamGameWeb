@@ -5,48 +5,49 @@
 }
 
 
+<body class="bg-light">
+    <div class="container">
+        <div class="row ">
+            <div class="col-lg-8 mt-5 ">
+                <div class="card font-weight-normal ">
+                    <div class="card-header">
+                        <h3 class=" bg-transparent text-center text-danger">Registration Form</h3>
+                    </div>
+                    <div class="card-body bg-info">
+                        <form class="form" role="form">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="txtEmailAddress" name="txtEmailAddress" aria-describedby="emailHelp" placeholder="Enter email" required>
 
-<div class="container">
-    <div class="row border-dark shadow-lg">
-        <div class="col-lg-8 mt-xl-5 mx-5">
-            <div class="card font-weight-light ">
-                <div class="card-header">
-                    <h3 class=" bg-transparent text-center text-danger">Registration Form</h3>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="txtpassword" name="txtpassword" placeholder="Password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Confirm Password</label>
+                                <input type="password" class="form-control" id="txtConfirmPassword" name="txtConfirmPassword" placeholder="Confirm Password" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Mobile Number</label>
+                                <input type="tel" class="form-control" id="txtMobileNumber" name="txtMobileNumber" pattern="^\d{10}$" placeholder="Enter 10 digit Mobile Number" required>
+
+
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Date Of Birth</label>
+                                <input type="text" class="form-control" id="txtDateOfBirth" name="txtDateOfBirth" placeholder="Date Of Birth" required pattern="/([0-9]{4}.[0-9]{1,2}.[0-9]{1,2})|([0-9]{1,2}.[0-9]{1,2}.[0-9]{4})/">
+                            </div>
+                            <div>
+
+                            </div>
+                            <button type="submit" class="btn btn-success btn-lg float-md-right" id="btnLogin">Submit</button>
+                        </form>
+                    </div>
+                    <!--/card-block-->
                 </div>
-                <div class="card-body bg-info">
-                    <form class="form" role="form">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" name="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
-
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" name="exampleInputPassword1" placeholder="Password" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Confirm Password</label>
-                            <input type="password" class="form-control" id="exampleInputconfirmPassword1" name="exampleInputconfirmPassword1" placeholder="Confirm Password" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Mobile Number</label>
-                            <input type="tel" class="form-control" id="exampleInputnumber" name="exampleInputnumber" pattern="^\d{10}$" placeholder="Enter 10 digit Mobile Number" required>
-
-
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Date Of Birth</label>
-                            <input type="text" class="form-control" id="exampleInputdateofbirth" placeholder="Date Of Birth" required pattern="/([0-9]{4}.[0-9]{1,2}.[0-9]{1,2})|([0-9]{1,2}.[0-9]{1,2}.[0-9]{4})/">
-                        </div>
-                        <div>
-
-                        </div>
-                        <button type="submit" class="btn btn-success btn-lg float-md-right" id="btnLogin">Submit</button>
-                    </form>
-                </div>
-                <!--/card-block-->
             </div>
         </div>
     </div>
-</div>
+</body>

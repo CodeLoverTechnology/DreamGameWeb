@@ -154,7 +154,6 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\images\%2819%29 Part - 27 - Multiple Layouts in MVC - mvc tutorial for beginners in .net c# - YouTube.MP4" />
     <Content Include="Content\images\1.jpg" />
     <Content Include="Content\images\12.jpg" />
     <Content Include="Content\images\2.jpg" />
@@ -162,7 +161,9 @@
     <Content Include="Content\images\4cr.png" />
     <Content Include="Content\images\calender_grey.png" />
     <Content Include="Content\images\indiateam.jpg" />
+    <Content Include="Content\images\live.png" />
     <Content Include="Content\images\multi_sport_grey.png" />
+    <Content Include="Content\images\pyramid-2.jpg" />
     <Content Include="Content\images\yv.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -239,6 +240,11 @@
     <Content Include="Views\Shared\_Layout_afterlogin.cshtml" />
     <Content Include="Views\User\UserDishbord.cshtml" />
     <Content Include="Views\User\verification.cshtml" />
+    <Content Include="Views\User\ForgetPassword.cshtml" />
+    <Content Include="Views\User\PrivacyandPolicy.cshtml" />
+    <Content Include="Views\User\HowToPlay.cshtml" />
+    <Content Include="Views\User\MyContest.cshtml" />
+    <Content Include="Views\User\ChangePassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
