@@ -25,8 +25,8 @@
                                 <input type="password" class="form-control" id="txtpassword" name="txtpassword" placeholder="Password" required>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Confirm Password</label>
-                                <input type="password" class="form-control" id="txtConfirmPassword" name="txtConfirmPassword" placeholder="Confirm Password" required>
+                                <label for="exampleInputEmail1">Confirm password</label>
+                                <input type='password' id="password2" placeholder="Confirm password" name='password2' class="form-control" value='' data-bv-excluded="false" data-match="#password" required>
                             </div>
 
                             <div class="form-group">
@@ -37,12 +37,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Date Of Birth</label>
-                                <input type="text" class="form-control" id="txtDateOfBirth" name="txtDateOfBirth" placeholder="Date Of Birth" required pattern="/([0-9]{4}.[0-9]{1,2}.[0-9]{1,2})|([0-9]{1,2}.[0-9]{1,2}.[0-9]{4})/">
+                                <input type="text" class="form-control" id="datepicker" name="date" placeholder="MM/DD/YYY" required>
                             </div>
                             <div>
 
                             </div>
-                            <button type="submit" class="btn btn-primary btn-lg btn-block" id="btnLogin">Submit</button>
+                            <button type="submit" class="btn btn-dark btn-lg btn-block" id="btnLogin">Submit</button>
                         </form>
                     </div>
                     <!--/card-block-->
@@ -51,3 +51,36 @@
         </div>
     </div>
 </body>
+<script type="text/javascript">
+    var password = document.getElementById("txtpassword")
+        , confirm_password = document.getElementById("password2");
+
+    function validatePassword() {
+        if (password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("Passwords Don't Match");
+        } else {
+            confirm_password.setCustomValidity('');
+        }
+    }
+
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+
+
+</script>
+<script src="~/Scripts/bootstrap-datepicker.min.js"></script>
+<script>
+      $(document).ready(function ()
+        {
+          $("#datepicker").datepicker(
+                {
+                    defaultDate: 'EntryDateTime',
+                    showTodayButton: true,
+                    format: 'YYYY-MM-DD HH:mm',
+                    showClose: true,
+                    showClear: true,
+                    toolbarPlacement: 'top',
+                    stepping: 15
+                });
+        });
+</script>
