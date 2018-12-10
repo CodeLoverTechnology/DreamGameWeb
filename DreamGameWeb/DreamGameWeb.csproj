@@ -160,6 +160,7 @@
     <Content Include="Content\images\3.jpg" />
     <Content Include="Content\images\4cr.png" />
     <Content Include="Content\images\calender_grey.png" />
+    <Content Include="Content\images\child_boy-512.png" />
     <Content Include="Content\images\desktop_app2 %281%29.png" />
     <Content Include="Content\images\indiateam.jpg" />
     <Content Include="Content\images\live.png" />
@@ -250,6 +251,8 @@
     <Content Include="Views\User\HowToPlay.cshtml" />
     <Content Include="Views\User\MyContest.cshtml" />
     <Content Include="Views\User\ChangePassword.cshtml" />
+    <Content Include="Views\User\MyAccount.cshtml" />
+    <Content Include="Views\User\AddPayment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

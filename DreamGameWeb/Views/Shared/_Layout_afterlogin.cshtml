@@ -8,26 +8,26 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-info mr-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
         <a class="navbar-brand mx-0 p-0" href="#">Logo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto alert-link">
                 <li class="nav-item active">
-                    <a class="nav-link" href="../Home/Index">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link text-white" href="../Home/Index">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link text-white" href="#">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link text-white" href="#">Contact</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">HowToPlay</a>
+                    <a class="nav-link text-white" href="#">HowToPlay</a>
                 </li>
 
 
@@ -37,13 +37,13 @@
             <ul class="navbar-nav">
                 <li class="nav-item dropdown ">
                     <a class="nav-link dropdown-toggle img-fluid" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="~/Content/images/3.jpg" class="rounded-circle" width="50" height="50" >
+                            <img src="~/Content/images/child_boy-512.png" class="rounded-circle" width="50" height="50" >
                     </a>
                     <div class="dropdown-menu  border-danger" aria-labelledby="navbarDropdown">
                         <div class="mr-3">
 
                             <a class="dropdown-item text-dark " href="../User/MyContest">My Contests</a>
-                            <a class="dropdown-item text-dark " href="#">My Account</a>
+                            <a class="dropdown-item text-dark " href="../User/MyAccount">My Account</a>
                             <div class="dropdown-divider text-dark"></div>
                             <a class="dropdown-item text-dark" href="../User/Verification">Verification</a>
                             <a class="dropdown-item text-dark" href="../User/ChangePassword">Change Password</a>
@@ -77,15 +77,19 @@
     <div class="row">
         @RenderBody()
     </div>
-    <div class="container body-content navbar-fixed-bottom">
-        <footer class="fixed-bottom bg-dark">
-            <p class="float-left text-white ">
-                Copy Right 2018 All reserved
-                Dream 11
+    <div class="container-fluid body-content navbar-fixed-bottom">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+            <footer class="fixed-bottom bg-primary">
+                <p class="float-left text-white m-2 ">
+                    Copy Right 2018 All reserved
+                    Dream 11
+                    <a href="../User/PrivacyandPolicy" class="text-dark">Privacy And Policy</a>
+                </p>
 
-            </p>
-            <p class="m-0 float-right text-white">Presented By :<a href="http://codelovertechnology.com/" target="_blank"> CodeLover Technology</a></p>
-        </footer>
+                <p class="m-0 float-right text-white m-2">Presented By :<a href="http://codelovertechnology.com/" class="text-dark" target="_blank"> CodeLover Technology</a></p>
+
+            </footer>
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

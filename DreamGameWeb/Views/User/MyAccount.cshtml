@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "MyAccount";
+    Layout = "~/Views/Shared/_Layout_afterlogin.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <h2>Wallet</h2><br />
+
+
+            <div class="row">
+                <p>Current Point:-<strong>100Coins</strong></p>
+            </div>
+            <div class="row">
+                <h5>Payment History</h5>
+
+            </div>
+            <div class="row">
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Date/Time</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Dec 4,2018,9:12 Pm</td>
+                            <td><strong>Rs</strong>1500</td>
+                            <td>successful payment</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Dec 4,2018,9:12 Pm</td>
+                            <td><strong>Rs</strong>2500</td>
+                            <td>successful payment</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Dec 4,2018,9:12 Pm</td>
+                            <td><strong>Rs</strong>3500</td>
+                            <td>successful payment</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr />
+        <div class="col-g-6 col-md-6 col-sm-6 mt-4">
+            <a href="../User/AddPayment" class="btn btn-primary btn-lg ">Add Payment</a>
+            <a href="#" class="btn btn-primary btn-lg ">withdraw payment</a>
+        </div>
+        
+    </div>
+   
+</div>
+

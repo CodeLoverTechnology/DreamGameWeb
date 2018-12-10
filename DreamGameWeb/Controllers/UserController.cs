@@ -42,6 +42,14 @@ namespace DreamGameWeb.Controllers
         {
             return View();
         }
+        public ActionResult MyAccount()
+        {
+            return View();
+        }
+        public ActionResult AddPayment()
+        {
+            return View();
+        }
 
 
     }
