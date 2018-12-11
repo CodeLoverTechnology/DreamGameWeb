@@ -7,7 +7,7 @@
 
 <body class="bg-light">
     <div class="container">
-        <div class="row popover-header">
+        <div class="row">
             <div class="col-lg-8 mt-5 ">
                 <div class="card font-weight-normal  float-md-right w-75 h-50  ">
                     <div class="card-header">
@@ -37,7 +37,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Date Of Birth</label>
-                                <input type="text" class="form-control" id="txtdob" name="txtdob" placeholder="MM/DD/YYY" required>
+                                <input type="text" class="form-control" id="txtdob" name="txtdob" placeholder="MM/DD/YYY"  required>
                             </div>
                             <div>
 
@@ -51,7 +51,12 @@
         </div>
     </div>
 </body>
+
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+<link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
     var password = document.getElementById("txtpassword")
         , confirm_password = document.getElementById("password2");
@@ -67,13 +72,11 @@
     password.onchange = validatePassword;
     confirm_password.onkeyup = validatePassword;
 
-    debugger;$(document).ready(function () {
-        $("#txtdob").txtdob(
-            {
-                
-                format: 'YYYY-MM-DD HH:mm',
-                
-            });
+   
+
+    $('#txtdob').datepicker({
+        uiLibrary: 'bootstrap4',
+         format: 'dd-mmm-yyyy'
     });
 
 </script>
