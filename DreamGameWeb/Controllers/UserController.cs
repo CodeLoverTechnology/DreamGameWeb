@@ -14,7 +14,7 @@ namespace DreamGameWeb.Controllers
             return View();
         }
 
-        public ActionResult UserDishbord()
+        public ActionResult UserDashboard()
         {
             return View();
         }
