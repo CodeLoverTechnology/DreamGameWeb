@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.DependencyCollector, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.8.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
     </Reference>
@@ -77,6 +83,8 @@
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -140,9 +148,32 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MasterTableController.cs" />
+    <Compile Include="Controllers\M_UserMasterController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DreamGame11DB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DreamGame11DB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DreamGame11DB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DreamGame11DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DreamGame11DB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DreamGame11DB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_MasterTable.cs">
+      <DependentUpon>DreamGame11DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_UserMaster.cs">
+      <DependentUpon>DreamGame11DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\phonenumber.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -183,6 +214,16 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Models\DreamGame11DB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DreamGame11DB.Context.cs</LastGenOutput>
+      <DependentUpon>DreamGame11DB.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\DreamGame11DB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DreamGame11DB.edmx</DependentUpon>
+      <LastGenOutput>DreamGame11DB.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap-datepicker.min.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -206,6 +247,13 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <EntityDeploy Include="Models\DreamGame11DB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DreamGame11DB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DreamGame11DB.edmx.diagram">
+      <DependentUpon>DreamGame11DB.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -251,7 +299,7 @@
     <Content Include="Views\Home\Registration.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Shared\_Layout_afterlogin.cshtml" />
-    <Content Include="Views\User\UserDishbord.cshtml" />
+    <Content Include="Views\User\UserDashboard.cshtml" />
     <Content Include="Views\User\verification.cshtml" />
     <Content Include="Views\User\ForgetPassword.cshtml" />
     <Content Include="Views\User\PrivacyandPolicy.cshtml" />
@@ -260,9 +308,15 @@
     <Content Include="Views\User\ChangePassword.cshtml" />
     <Content Include="Views\User\MyAccount.cshtml" />
     <Content Include="Views\User\AddPayment.cshtml" />
+    <Content Include="Views\MasterTable\Create.cshtml" />
+    <Content Include="Views\MasterTable\Delete.cshtml" />
+    <Content Include="Views\MasterTable\Details.cshtml" />
+    <Content Include="Views\MasterTable\Edit.cshtml" />
+    <Content Include="Views\MasterTable\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\M_UserMaster\" />
     <Folder Include="Views\Verification\" />
   </ItemGroup>
   <ItemGroup>
@@ -272,6 +326,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
