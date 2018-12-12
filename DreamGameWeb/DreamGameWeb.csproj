@@ -201,6 +201,7 @@
     <Content Include="Content\images\desktop_app2 %281%29.png" />
     <Content Include="Content\images\indiateam.jpg" />
     <Content Include="Content\images\Learn-Quiz-Loop-2.jpg" />
+    <Content Include="Content\images\lightbluebgcolor.png" />
     <Content Include="Content\images\live.png" />
     <Content Include="Content\images\man 1.PNG" />
     <Content Include="Content\images\man2.jpg" />
@@ -300,7 +301,6 @@
     <Content Include="Views\Home\Registration.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Shared\_Layout_afterlogin.cshtml" />
-    <Content Include="Views\User\UserDashboard.cshtml" />
     <Content Include="Views\User\verification.cshtml" />
     <Content Include="Views\User\ForgetPassword.cshtml" />
     <Content Include="Views\User\PrivacyandPolicy.cshtml" />
@@ -314,6 +314,7 @@
     <Content Include="Views\MasterTable\Details.cshtml" />
     <Content Include="Views\MasterTable\Edit.cshtml" />
     <Content Include="Views\MasterTable\Index.cshtml" />
+    <Content Include="Views\User\UserDashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
