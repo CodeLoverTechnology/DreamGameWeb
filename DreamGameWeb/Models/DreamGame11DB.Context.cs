@@ -27,5 +27,10 @@ namespace DreamGameWeb.Models
     
         public virtual DbSet<M_MasterTable> M_MasterTable { get; set; }
         public virtual DbSet<M_UserMaster> M_UserMaster { get; set; }
+        public virtual DbSet<M_Contest_Master> M_Contest_Master { get; set; }
+        public virtual DbSet<M_User_Wellate_Master> M_User_Wellate_Master { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<T_Payment> T_Payment { get; set; }
+        public virtual DbSet<T_User_Contest> T_User_Contest { get; set; }
     }
 }

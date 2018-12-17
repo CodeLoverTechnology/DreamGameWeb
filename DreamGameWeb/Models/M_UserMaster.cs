@@ -14,6 +14,12 @@ namespace DreamGameWeb.Models
     
     public partial class M_UserMaster
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public M_UserMaster()
+        {
+            this.M_User_Wellate_Master = new HashSet<M_User_Wellate_Master>();
+        }
+    
         public string UserCode { get; set; }
         public string UserName { get; set; }
         public string Address { get; set; }
@@ -31,5 +37,7 @@ namespace DreamGameWeb.Models
         public bool Active { get; set; }
     
         public virtual M_MasterTable M_MasterTable { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<M_User_Wellate_Master> M_User_Wellate_Master { get; set; }
     }
 }

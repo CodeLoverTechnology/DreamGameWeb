@@ -1,0 +1,91 @@
+﻿@model DreamGameWeb.Models.T_User_Contest
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout_afterlogin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>T_User_Contest</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User_Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contest_Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contest_Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Match_Info)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Match_Info)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Active)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Active)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.M_Contest_Master.Contest_Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.M_Contest_Master.Contest_Desc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Contest_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

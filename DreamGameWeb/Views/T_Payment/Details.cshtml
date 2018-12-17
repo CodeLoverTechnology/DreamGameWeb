@@ -1,0 +1,139 @@
+﻿@model DreamGameWeb.Models.T_Payment
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout_afterlogin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>T_Payment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Payment_Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Payment_Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Payment_Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Payment_Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Transaction_Refrence_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Transaction_Refrence_Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TransactionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TransactionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount_Transfer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount_Transfer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.To)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.To)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.From)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.From)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Transaction_status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Transaction_status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remarks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Active)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Active)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.M_MasterTable.MasterVale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.M_MasterTable.MasterVale)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Payment_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -18,6 +18,7 @@ namespace DreamGameWeb.Models
         public M_MasterTable()
         {
             this.M_UserMaster = new HashSet<M_UserMaster>();
+            this.T_Payment = new HashSet<T_Payment>();
         }
     
         public int MasterID { get; set; }
@@ -31,5 +32,7 @@ namespace DreamGameWeb.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<M_UserMaster> M_UserMaster { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<T_Payment> T_Payment { get; set; }
     }
 }

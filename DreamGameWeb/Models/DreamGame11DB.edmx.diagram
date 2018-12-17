@@ -8,6 +8,14 @@
         <EntityTypeShape EntityType="DreamGameModel.M_MasterTable" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DreamGameModel.M_UserMaster" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="DreamGameModel.FK_M_UserMaster_M_MasterTable" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DreamGameModel.M_Contest_Master" Width="1.5" PointX="5.375" PointY="1" />
+        <EntityTypeShape EntityType="DreamGameModel.M_User_Wellate_Master" Width="1.5" PointX="5.25" PointY="5.625" />
+        <EntityTypeShape EntityType="DreamGameModel.sysdiagram" Width="1.5" PointX="7.375" PointY="5.75" />
+        <EntityTypeShape EntityType="DreamGameModel.T_Payment" Width="1.5" PointX="3" PointY="8.25" />
+        <EntityTypeShape EntityType="DreamGameModel.T_User_Contest" Width="1.5" PointX="7.625" PointY="1.375" />
+        <AssociationConnector Association="DreamGameModel.FK_T_User_Contest_M_Contest_Master" />
+        <AssociationConnector Association="DreamGameModel.FK_T_Payment_M_MasterTable" />
+        <AssociationConnector Association="DreamGameModel.FK_M_User_Wellate_Master_M_UserMaster" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

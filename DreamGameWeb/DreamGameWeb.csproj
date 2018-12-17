@@ -70,8 +70,8 @@
     <Reference Include="Microsoft.ApplicationInsights, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.2.8.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.4\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.5\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -144,13 +144,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\DreamGameCommonFunction.cs" />
+    <Compile Include="App_GlobalResources\DreamGameResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DreamGameResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MasterTableController.cs" />
+    <Compile Include="Controllers\M_Contest_MasterController.cs" />
     <Compile Include="Controllers\M_UserMasterController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\M_User_Wellate_MasterController.cs" />
+    <Compile Include="Controllers\T_PaymentController.cs" />
+    <Compile Include="Controllers\T_User_ContestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -169,13 +178,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DreamGame11DB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\M_Contest_Master.cs">
+      <DependentUpon>DreamGame11DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\M_MasterTable.cs">
       <DependentUpon>DreamGame11DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\M_UserMaster.cs">
       <DependentUpon>DreamGame11DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\phonenumber.cs" />
+    <Compile Include="Models\M_User_Wellate_Master.cs">
+      <DependentUpon>DreamGame11DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>DreamGame11DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T_Payment.cs">
+      <DependentUpon>DreamGame11DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T_User_Contest.cs">
+      <DependentUpon>DreamGame11DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -187,19 +210,24 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\1.jpg" />
     <Content Include="Content\images\12.jpg" />
+    <Content Include="Content\images\120.jpg" />
     <Content Include="Content\images\122.jpg" />
     <Content Include="Content\images\2.jpg" />
     <Content Include="Content\images\3.jpg" />
     <Content Include="Content\images\4cr.png" />
+    <Content Include="Content\images\582013.jpg" />
     <Content Include="Content\images\5th-service-icon.png" />
     <Content Include="Content\images\about_us img.jpg" />
     <Content Include="Content\images\Background-20.jpeg" />
     <Content Include="Content\images\banner223.jpg" />
+    <Content Include="Content\images\bg123.jpg" />
     <Content Include="Content\images\bg22.jpg" />
     <Content Include="Content\images\calender_grey.png" />
     <Content Include="Content\images\child_boy-512.png" />
     <Content Include="Content\images\con2.jpg" />
     <Content Include="Content\images\desktop_app2 %281%29.png" />
+    <Content Include="Content\images\e8f0697f338f6bfb8740a34390e806ab.jpg" />
+    <Content Include="Content\images\flower_menubackground.png" />
     <Content Include="Content\images\indiateam.jpg" />
     <Content Include="Content\images\Learn-Quiz-Loop-2.jpg" />
     <Content Include="Content\images\lightbluebgcolor.png" />
@@ -210,6 +238,8 @@
     <Content Include="Content\images\men.png" />
     <Content Include="Content\images\multi_sport_grey.png" />
     <Content Include="Content\images\pyramid-2.jpg" />
+    <Content Include="Content\images\sachin.jpg" />
+    <Content Include="Content\images\virat-kohli.jpg" />
     <Content Include="Content\images\yv.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -310,16 +340,36 @@
     <Content Include="Views\User\ChangePassword.cshtml" />
     <Content Include="Views\User\MyAccount.cshtml" />
     <Content Include="Views\User\AddPayment.cshtml" />
+    <Content Include="Views\User\UserDashboard.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\M_Contest_Master\Create.cshtml" />
+    <Content Include="Views\M_Contest_Master\Delete.cshtml" />
+    <Content Include="Views\M_Contest_Master\Details.cshtml" />
+    <Content Include="Views\M_Contest_Master\Edit.cshtml" />
+    <Content Include="Views\M_Contest_Master\Index.cshtml" />
+    <Content Include="Views\T_Payment\Create.cshtml" />
+    <Content Include="Views\T_Payment\Delete.cshtml" />
+    <Content Include="Views\T_Payment\Details.cshtml" />
+    <Content Include="Views\T_Payment\Edit.cshtml" />
+    <Content Include="Views\T_Payment\Index.cshtml" />
+    <Content Include="Views\T_User_Contest\Create.cshtml" />
+    <Content Include="Views\T_User_Contest\Delete.cshtml" />
+    <Content Include="Views\T_User_Contest\Details.cshtml" />
+    <Content Include="Views\T_User_Contest\Edit.cshtml" />
+    <Content Include="Views\T_User_Contest\Index.cshtml" />
     <Content Include="Views\MasterTable\Create.cshtml" />
     <Content Include="Views\MasterTable\Delete.cshtml" />
     <Content Include="Views\MasterTable\Details.cshtml" />
     <Content Include="Views\MasterTable\Edit.cshtml" />
     <Content Include="Views\MasterTable\Index.cshtml" />
-    <Content Include="Views\User\UserDashboard.cshtml" />
+    <Content Include="Views\M_User_Wellate_Master\Create.cshtml" />
+    <Content Include="Views\M_User_Wellate_Master\Delete.cshtml" />
+    <Content Include="Views\M_User_Wellate_Master\Details.cshtml" />
+    <Content Include="Views\M_User_Wellate_Master\Edit.cshtml" />
+    <Content Include="Views\M_User_Wellate_Master\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\M_UserMaster\" />
     <Folder Include="Views\Verification\" />
   </ItemGroup>
   <ItemGroup>
@@ -333,6 +383,12 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\DreamGameResources.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DreamGameResources.Designer.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

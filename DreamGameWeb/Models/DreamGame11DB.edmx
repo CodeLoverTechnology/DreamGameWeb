@@ -4,7 +4,25 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DreamGameModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DreamGameModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="M_Contest_Master">
+          <Key>
+            <PropertyRef Name="Contest_ID" />
+          </Key>
+          <Property Name="Contest_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Contest _Code" Type="int" Nullable="false" />
+          <Property Name="Contest_Desc" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Banner_Image_Path" Type="image" />
+          <Property Name="Bit_Amount" Type="int" />
+          <Property Name="Max_People" Type="int" />
+          <Property Name="Promo_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Promo_Code_Values" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="M_MasterTable">
           <Key>
             <PropertyRef Name="MasterID" />
@@ -15,6 +33,21 @@
           <Property Name="CreatedBy" Type="nvarchar(max)" Nullable="false" />
           <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="ModifiedBy" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="M_User_Wellate_Master">
+          <Key>
+            <PropertyRef Name="Wellate_Id" />
+          </Key>
+          <Property Name="Wellate_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_id" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Total_Coins" Type="int" />
+          <Property Name="Net_Coins" Type="int" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="250" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
           <Property Name="Active" Type="bit" Nullable="false" />
         </EntityType>
@@ -38,6 +71,63 @@
           <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
           <Property Name="Active" Type="bit" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="T_Payment">
+          <Key>
+            <PropertyRef Name="Payment_Id" />
+          </Key>
+          <Property Name="Payment_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Payment_Amount" Type="int" Nullable="false" />
+          <Property Name="Payment_Desc" Type="nvarchar" MaxLength="500" />
+          <Property Name="Payment_Mode" Type="int" />
+          <Property Name="Transaction_Refrence_Id" Type="int" />
+          <Property Name="TransactionDate" Type="datetime" />
+          <Property Name="Amount_Transfer" Type="int" />
+          <Property Name="To" Type="nvarchar" MaxLength="50" />
+          <Property Name="From" Type="nvarchar" MaxLength="50" />
+          <Property Name="Transaction_status" Type="int" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_User_Contest">
+          <Key>
+            <PropertyRef Name="Contest_Id" />
+          </Key>
+          <Property Name="Contest_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_Id" Type="int" Nullable="false" />
+          <Property Name="Contest_Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Match_Info" Type="nvarchar" MaxLength="300" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_M_User_Wellate_Master_M_UserMaster">
+          <End Role="M_UserMaster" Type="Self.M_UserMaster" Multiplicity="1" />
+          <End Role="M_User_Wellate_Master" Type="Self.M_User_Wellate_Master" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="M_UserMaster">
+              <PropertyRef Name="UserCode" />
+            </Principal>
+            <Dependent Role="M_User_Wellate_Master">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_M_UserMaster_M_MasterTable">
           <End Role="M_MasterTable" Type="Self.M_MasterTable" Multiplicity="0..1" />
           <End Role="M_UserMaster" Type="Self.M_UserMaster" Multiplicity="*" />
@@ -50,16 +140,56 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_T_Payment_M_MasterTable">
+          <End Role="M_MasterTable" Type="Self.M_MasterTable" Multiplicity="0..1" />
+          <End Role="T_Payment" Type="Self.T_Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="M_MasterTable">
+              <PropertyRef Name="MasterID" />
+            </Principal>
+            <Dependent Role="T_Payment">
+              <PropertyRef Name="Payment_Mode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_User_Contest_M_Contest_Master">
+          <End Role="M_Contest_Master" Type="Self.M_Contest_Master" Multiplicity="1" />
+          <End Role="T_User_Contest" Type="Self.T_User_Contest" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="M_Contest_Master">
+              <PropertyRef Name="Contest_ID" />
+            </Principal>
+            <Dependent Role="T_User_Contest">
+              <PropertyRef Name="Contest_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="DreamGameModelStoreContainer">
+          <EntitySet Name="M_Contest_Master" EntityType="Self.M_Contest_Master" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="M_MasterTable" EntityType="Self.M_MasterTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_User_Wellate_Master" EntityType="Self.M_User_Wellate_Master" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="M_UserMaster" EntityType="Self.M_UserMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Payment" EntityType="Self.T_Payment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_User_Contest" EntityType="Self.T_User_Contest" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_M_User_Wellate_Master_M_UserMaster" Association="Self.FK_M_User_Wellate_Master_M_UserMaster">
+            <End Role="M_UserMaster" EntitySet="M_UserMaster" />
+            <End Role="M_User_Wellate_Master" EntitySet="M_User_Wellate_Master" />
+          </AssociationSet>
           <AssociationSet Name="FK_M_UserMaster_M_MasterTable" Association="Self.FK_M_UserMaster_M_MasterTable">
             <End Role="M_MasterTable" EntitySet="M_MasterTable" />
             <End Role="M_UserMaster" EntitySet="M_UserMaster" />
           </AssociationSet>
+          <AssociationSet Name="FK_T_Payment_M_MasterTable" Association="Self.FK_T_Payment_M_MasterTable">
+            <End Role="M_MasterTable" EntitySet="M_MasterTable" />
+            <End Role="T_Payment" EntitySet="T_Payment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_User_Contest_M_Contest_Master" Association="Self.FK_T_User_Contest_M_Contest_Master">
+            <End Role="M_Contest_Master" EntitySet="M_Contest_Master" />
+            <End Role="T_User_Contest" EntitySet="T_User_Contest" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DreamGameModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -76,6 +206,7 @@
           <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="M_UserMaster" Relationship="Self.FK_M_UserMaster_M_MasterTable" FromRole="M_MasterTable" ToRole="M_UserMaster" />
+          <NavigationProperty Name="T_Payment" Relationship="DreamGameModel.FK_T_Payment_M_MasterTable" FromRole="M_MasterTable" ToRole="T_Payment" />
         </EntityType>
         <EntityType Name="M_UserMaster">
           <Key>
@@ -97,6 +228,7 @@
           <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="M_MasterTable" Relationship="Self.FK_M_UserMaster_M_MasterTable" FromRole="M_UserMaster" ToRole="M_MasterTable" />
+          <NavigationProperty Name="M_User_Wellate_Master" Relationship="DreamGameModel.FK_M_User_Wellate_Master_M_UserMaster" FromRole="M_UserMaster" ToRole="M_User_Wellate_Master" />
         </EntityType>
         <Association Name="FK_M_UserMaster_M_MasterTable">
           <End Role="M_MasterTable" Type="Self.M_MasterTable" Multiplicity="0..1" />
@@ -117,7 +249,142 @@
             <End Role="M_MasterTable" EntitySet="M_MasterTable" />
             <End Role="M_UserMaster" EntitySet="M_UserMaster" />
           </AssociationSet>
+          <EntitySet Name="M_Contest_Master" EntityType="DreamGameModel.M_Contest_Master" />
+          <EntitySet Name="M_User_Wellate_Master" EntityType="DreamGameModel.M_User_Wellate_Master" />
+          <EntitySet Name="sysdiagrams" EntityType="DreamGameModel.sysdiagram" />
+          <EntitySet Name="T_Payment" EntityType="DreamGameModel.T_Payment" />
+          <EntitySet Name="T_User_Contest" EntityType="DreamGameModel.T_User_Contest" />
+          <AssociationSet Name="FK_T_User_Contest_M_Contest_Master" Association="DreamGameModel.FK_T_User_Contest_M_Contest_Master">
+            <End Role="M_Contest_Master" EntitySet="M_Contest_Master" />
+            <End Role="T_User_Contest" EntitySet="T_User_Contest" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Payment_M_MasterTable" Association="DreamGameModel.FK_T_Payment_M_MasterTable">
+            <End Role="M_MasterTable" EntitySet="M_MasterTable" />
+            <End Role="T_Payment" EntitySet="T_Payment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_M_User_Wellate_Master_M_UserMaster" Association="DreamGameModel.FK_M_User_Wellate_Master_M_UserMaster">
+            <End Role="M_UserMaster" EntitySet="M_UserMaster" />
+            <End Role="M_User_Wellate_Master" EntitySet="M_User_Wellate_Master" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="M_Contest_Master">
+          <Key>
+            <PropertyRef Name="Contest_ID" />
+          </Key>
+          <Property Name="Contest_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Contest__Code" Type="Int32" Nullable="false" />
+          <Property Name="Contest_Desc" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Banner_Image_Path" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Bit_Amount" Type="Int32" />
+          <Property Name="Max_People" Type="Int32" />
+          <Property Name="Promo_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Promo_Code_Values" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="T_User_Contest" Relationship="DreamGameModel.FK_T_User_Contest_M_Contest_Master" FromRole="M_Contest_Master" ToRole="T_User_Contest" />
+        </EntityType>
+        <EntityType Name="M_User_Wellate_Master">
+          <Key>
+            <PropertyRef Name="Wellate_Id" />
+          </Key>
+          <Property Name="Wellate_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_id" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Total_Coins" Type="Int32" />
+          <Property Name="Net_Coins" Type="Int32" />
+          <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CreateBy" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedBy" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="M_UserMaster" Relationship="DreamGameModel.FK_M_User_Wellate_Master_M_UserMaster" FromRole="M_User_Wellate_Master" ToRole="M_UserMaster" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="T_Payment">
+          <Key>
+            <PropertyRef Name="Payment_Id" />
+          </Key>
+          <Property Name="Payment_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Payment_Amount" Type="Int32" Nullable="false" />
+          <Property Name="Payment_Desc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Payment_Mode" Type="Int32" />
+          <Property Name="Transaction_Refrence_Id" Type="Int32" />
+          <Property Name="TransactionDate" Type="DateTime" Precision="3" />
+          <Property Name="Amount_Transfer" Type="Int32" />
+          <Property Name="To" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="From" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Transaction_status" Type="Int32" />
+          <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="M_MasterTable" Relationship="DreamGameModel.FK_T_Payment_M_MasterTable" FromRole="T_Payment" ToRole="M_MasterTable" />
+        </EntityType>
+        <EntityType Name="T_User_Contest">
+          <Key>
+            <PropertyRef Name="Contest_Id" />
+          </Key>
+          <Property Name="Contest_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_Id" Type="Int32" Nullable="false" />
+          <Property Name="Contest_Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Match_Info" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedBy" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="M_Contest_Master" Relationship="DreamGameModel.FK_T_User_Contest_M_Contest_Master" FromRole="T_User_Contest" ToRole="M_Contest_Master" />
+        </EntityType>
+        <Association Name="FK_T_User_Contest_M_Contest_Master">
+          <End Type="DreamGameModel.M_Contest_Master" Role="M_Contest_Master" Multiplicity="1" />
+          <End Type="DreamGameModel.T_User_Contest" Role="T_User_Contest" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="M_Contest_Master">
+              <PropertyRef Name="Contest_ID" />
+            </Principal>
+            <Dependent Role="T_User_Contest">
+              <PropertyRef Name="Contest_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Payment_M_MasterTable">
+          <End Type="DreamGameModel.M_MasterTable" Role="M_MasterTable" Multiplicity="0..1" />
+          <End Type="DreamGameModel.T_Payment" Role="T_Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="M_MasterTable">
+              <PropertyRef Name="MasterID" />
+            </Principal>
+            <Dependent Role="T_Payment">
+              <PropertyRef Name="Payment_Mode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_M_User_Wellate_Master_M_UserMaster">
+          <End Type="DreamGameModel.M_UserMaster" Role="M_UserMaster" Multiplicity="1" />
+          <End Type="DreamGameModel.M_User_Wellate_Master" Role="M_User_Wellate_Master" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="M_UserMaster">
+              <PropertyRef Name="UserCode" />
+            </Principal>
+            <Dependent Role="M_User_Wellate_Master">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -156,6 +423,89 @@
                 <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_Contest_Master">
+            <EntityTypeMapping TypeName="DreamGameModel.M_Contest_Master">
+              <MappingFragment StoreEntitySet="M_Contest_Master">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Promo_Code_Values" ColumnName="Promo_Code_Values" />
+                <ScalarProperty Name="Promo_Code" ColumnName="Promo_Code" />
+                <ScalarProperty Name="Max_People" ColumnName="Max_People" />
+                <ScalarProperty Name="Bit_Amount" ColumnName="Bit_Amount" />
+                <ScalarProperty Name="Banner_Image_Path" ColumnName="Banner_Image_Path" />
+                <ScalarProperty Name="Contest_Desc" ColumnName="Contest_Desc" />
+                <ScalarProperty Name="Contest__Code" ColumnName="Contest _Code" />
+                <ScalarProperty Name="Contest_ID" ColumnName="Contest_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_User_Wellate_Master">
+            <EntityTypeMapping TypeName="DreamGameModel.M_User_Wellate_Master">
+              <MappingFragment StoreEntitySet="M_User_Wellate_Master">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Net_Coins" ColumnName="Net_Coins" />
+                <ScalarProperty Name="Total_Coins" ColumnName="Total_Coins" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Wellate_Id" ColumnName="Wellate_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DreamGameModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Payment">
+            <EntityTypeMapping TypeName="DreamGameModel.T_Payment">
+              <MappingFragment StoreEntitySet="T_Payment">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Transaction_status" ColumnName="Transaction_status" />
+                <ScalarProperty Name="From" ColumnName="From" />
+                <ScalarProperty Name="To" ColumnName="To" />
+                <ScalarProperty Name="Amount_Transfer" ColumnName="Amount_Transfer" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="Transaction_Refrence_Id" ColumnName="Transaction_Refrence_Id" />
+                <ScalarProperty Name="Payment_Mode" ColumnName="Payment_Mode" />
+                <ScalarProperty Name="Payment_Desc" ColumnName="Payment_Desc" />
+                <ScalarProperty Name="Payment_Amount" ColumnName="Payment_Amount" />
+                <ScalarProperty Name="Payment_Id" ColumnName="Payment_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_User_Contest">
+            <EntityTypeMapping TypeName="DreamGameModel.T_User_Contest">
+              <MappingFragment StoreEntitySet="T_User_Contest">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Match_Info" ColumnName="Match_Info" />
+                <ScalarProperty Name="Contest_Description" ColumnName="Contest_Description" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="Contest_Id" ColumnName="Contest_Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

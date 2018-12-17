@@ -1,0 +1,105 @@
+﻿@model IEnumerable<DreamGameWeb.Models.M_Contest_Master>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_afterlogin.cshtml";
+}
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Contest__Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contest_Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Banner_Image_Path)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bit_Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Max_People)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Promo_Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Promo_Code_Values)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Active)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.T_User_Contest.Contest_Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contest__Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contest_Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Banner_Image_Path)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bit_Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Max_People)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Promo_Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Promo_Code_Values)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Active)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.T_User_Contest.Contest_Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Contest_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Contest_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Contest_ID })
+        </td>
+    </tr>
+}
+
+</table>

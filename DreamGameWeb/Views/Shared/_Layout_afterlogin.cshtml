@@ -78,7 +78,8 @@
         @RenderBody()
     </div>
     <div class="container-fluid body-content navbar-fixed-bottom">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+        <div class="row">
+            <div class="col-lg-12">
             <footer class="fixed-bottom bg-primary">
                 <p class="float-left text-white m-2 ">
                     Copy Right 2018 All reserved
@@ -91,7 +92,7 @@
             </footer>
         </div>
     </div>
-
+</div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

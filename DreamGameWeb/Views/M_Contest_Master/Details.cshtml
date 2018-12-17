@@ -1,0 +1,123 @@
+﻿@model DreamGameWeb.Models.M_Contest_Master
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout_afterlogin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>M_Contest_Master</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Contest__Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contest__Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contest_Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contest_Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Banner_Image_Path)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Banner_Image_Path)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bit_Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bit_Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Max_People)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Max_People)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Promo_Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Promo_Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Promo_Code_Values)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Promo_Code_Values)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Active)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Active)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.T_User_Contest.Contest_Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.T_User_Contest.Contest_Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Contest_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -3,19 +3,23 @@
     ViewBag.Title = "Registration";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    .card{
+        background-color:transparent !important; margin:200px 0 500px 200px;
+    }
+</style>
 
-
-<body class="bg-light">
+<body  style="background-image:url(../../Content/images/e8f0697f338f6bfb8740a34390e806ab.jpg); background-repeat:no-repeat;width:100%; height:100%;">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 mt-5 ">
-                <div class="card font-weight-normal  float-md-right w-75 h-50  ">
-                    <div class="card-header">
-                        <h3 class=" bg-transparent text-center text-danger ">Registration Form</h3>
+            <div class="col-lg-8">
+                <div class="card font-weight-normal">
+                    <div class="bg-transparent">
+                        <h3 class=" bg-primary text-center text-white"> User Registration</h3>
                     </div>
-                    <div class="card-body bg-info  ">
-                        <form class="form" role="form">
-                            <div class="form-group mt-1">
+                    <div class="card-body bg-transparent border">
+                        <form class="form bg-transparent">
+                            <div class="form-group mt-3 ">
                                 <label for="exampleInputEmail1">Email address</label>
                                 <input type="email" class="form-control" id="txtEmailAddress" name="txtEmailAddress" aria-describedby="emailHelp" placeholder="Enter email" required>
 
@@ -37,12 +41,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Date Of Birth</label>
-                                <input type="text" class="form-control" id="txtdob" name="txtdob" placeholder="MM/DD/YYY"  required>
+                                <input type="text" class="form-control" id="txtdob" name="txtdob" placeholder="DD/MM/YYY"  required>
                             </div>
                             <div>
 
                             </div>
-                            <button type="submit" class="btn btn-dark btn-lg btn-block" id="btnLogin">Submit</button>
+                            <button type="submit" class="btn btn-dark btn-lg btn-block" id="btnLogin" style="background-image:url(../../Content/images/Background-20.jpeg)">Submit</button>
                         </form>
                     </div>
                     <!--/card-block-->
